@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Suite1" parallel="tests" thread-count="2">
+ 
+    <parameter name = "appUrl" value = "https://keyfood.ro" />
+    <parameter name ="user" value="customer" />
+    <parameter name ="pass" value="customer@123" />
+    <parameter name ="invuser" value="12345@67890" />
+    <parameter name ="invpass" value="12345@67890" />
+
+
+    <test name="Chrome" >
+
+    <parameter name = "browser" value = "chrome" />
+        <classes>
+            <class name="tests.LoginTest" ></class>
+        </classes>
+    </test>
+   
+    <test name="Firefox" >
+ 
+    <parameter name = "browser" value = "firefox" />
+        <classes>
+            <class name="tests.LoginTest" ></class>
+        </classes>
+    </test>
+
+</suite>

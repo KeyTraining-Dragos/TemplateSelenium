@@ -2,6 +2,7 @@ package utils;
 
 import org.openqa.selenium.WebDriver;
 
+import pages.LoginPage;
 import pages.MenuPage;
 
 public class BasePage extends SeleniumWrappers {
@@ -11,5 +12,7 @@ public class BasePage extends SeleniumWrappers {
 	}
 	
 	public MenuPage menu =  new MenuPage(driver);
-
+	public LoginPage login = new LoginPage(driver);
+	
+	
 }

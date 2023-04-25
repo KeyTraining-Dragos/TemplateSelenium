@@ -38,5 +38,10 @@ public class SeleniumWrappers {
 	public WebElement getElement(By locator) {
 		return driver.findElement(locator);
 	}
+
+	
+	public boolean elementIsDisplayed(By locator) {
+		return driver.findElement(locator).isDisplayed();
+	}
 	
 }
