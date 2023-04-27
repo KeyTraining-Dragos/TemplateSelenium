@@ -3,7 +3,7 @@ agent any
 stages {
 stage ('Dragos zice :Compile Stage') {
 tools {
-        maven "apache-maven-3.0.5"
+        maven "apache-maven-3.8.7"
       }
       steps {
         echo "This is the complie phase"
@@ -12,7 +12,7 @@ tools {
     }
 stage ('Dragos zice : Testing stage'){
 tools {
-        maven "apache-maven-3.0.5"
+        maven "apache-maven-3.8.7"
       }
      
       steps {
@@ -22,7 +22,7 @@ tools {
 }
 stage ('Dragos zice : Package stage'){
 tools {
-        maven "apache-maven-3.0.5"
+        maven "apache-maven-3.8.7"
       }
       steps {
         echo "This is the Maven package phase"
@@ -31,7 +31,7 @@ tools {
       }
 stage ('Dragos zice : Deploy stage'){
 tools {
-        maven "apache-maven-3.0.5"
+        maven "apache-maven-3.8.7"
       }
       steps {
         echo "This is the deploy stage"
