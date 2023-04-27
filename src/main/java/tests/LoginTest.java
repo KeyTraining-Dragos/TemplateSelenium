@@ -13,7 +13,6 @@ public class LoginTest extends BaseTest{
 	@Parameters({"user", "pass"})
 	@Test
 	public void validLoginTest(String user, String pass) {
-		Log.info("testi");
 		app.click(app.menu.loginLink);
 		app.login.loginInApp(user, pass);
 		assertTrue(app.login.elementIsDisplayed(app.login.myAccountElement));
