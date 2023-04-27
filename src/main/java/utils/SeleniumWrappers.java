@@ -3,6 +3,7 @@ package utils;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -18,8 +19,16 @@ public class SeleniumWrappers {
 	}
 	
 	public void click(By locator) {
-		waitForElementToBeVisible(getElement(locator));
-		getElement(locator).click();
+		try {
+			waitForElementToBeVisible(getElement(locator));
+			getElement(locator).click();
+		}catch (StaleElementReferenceException e) {
+			WebDriverWait wait =  new WebDriverWait(driver, Duration.ofSeconds(10));
+			wait.until(ExpectedConditions.stalenessOf(getElement(locator)));
+			getElement(locator).click();
+		
+		}
+		
 	}
 	
 	public void sendKeys(By locator, String value) {

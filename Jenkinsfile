@@ -1,7 +1,7 @@
 pipeline{
 agent any
 stages {
-stage ('Dragos zice :Compile Stage') {
+stage ('Dev Stage') {
 tools {
         maven "apache-maven-3.8.7"
       }
@@ -10,7 +10,7 @@ tools {
         sh 'mvn clean compile'
       }
     }
-stage ('Dragos zice : Testing stage'){
+stage ('Testing stage'){
 tools {
         maven "apache-maven-3.8.7"
       }
@@ -20,22 +20,20 @@ tools {
         sh 'mvn test -DsuiteXml=testng-paralel.xml'
       }
 }
-stage ('Dragos zice : Package stage'){
+stage ('PreProduction stage'){
 tools {
         maven "apache-maven-3.8.7"
       }
       steps {
-        echo "This is the Maven package phase"
-        sh 'mvn package'
+        echo "This is the PP phase"
+              }
       }
-      }
-stage ('Dragos zice : Deploy stage'){
+stage ('Production stage'){
 tools {
         maven "apache-maven-3.8.7"
       }
       steps {
         echo "This is the deploy stage"
-        sh 'mvn deploy'
       }
       }
 }
