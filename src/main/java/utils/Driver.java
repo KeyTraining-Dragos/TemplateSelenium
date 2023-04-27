@@ -51,15 +51,15 @@ public class Driver {
 		//firefoxBinary.addCommandLineOptions("--headless");
 		FirefoxOptions firefoxOptions =  new FirefoxOptions();
 		firefoxOptions.setBinary(firefoxBinary);
-		//firefoxOptions.addArguments("--headless");
+		firefoxOptions.addArguments("--headless");
 		
 		return firefoxOptions;
 	}
 	
 	public static ChromeOptions getChromeOptions() {
 		ChromeOptions chromeOPtions =  new ChromeOptions();
-		//chromeOPtions.addArguments("--headless");
-		//chromeOPtions.addArguments("--window-size=1580, 1280");
+		chromeOPtions.addArguments("--headless");
+		chromeOPtions.addArguments("--window-size=1580, 1280");
 		//chromeOPtions.addArguments("start-maximized");
 		
 		return chromeOPtions;
