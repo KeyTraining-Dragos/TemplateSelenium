@@ -7,7 +7,6 @@ tools {
       }
       steps {
         echo "This is the complie phase"
-        sh 'mvn clean compile'
       }
     }
 stage ('Testing stage'){
