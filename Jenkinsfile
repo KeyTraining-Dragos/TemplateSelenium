@@ -17,7 +17,7 @@ tools {
      
       steps {
         echo "This is the unit test phase"
-        sh 'mvn test'
+        sh 'mvn test -DsuiteXml='testng-paralel.xml''
       }
 }
 stage ('Dragos zice : Package stage'){
